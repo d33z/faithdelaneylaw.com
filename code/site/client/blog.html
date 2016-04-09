@@ -18,7 +18,7 @@
             {{> post}}
           {{/each}}
           {{#if more}}
-            <h4 id="morePosts"><a href="#">» View more posts »</a><h4>
+            <h4 id="morePosts"><a href="#">» View more posts »</a></h4>
           {{/if}}
         {{else}}
           <h2 class="BlogTitle">Useful tips coming soon...</h2>
@@ -29,7 +29,7 @@
 </template>
 
 <template name="post">
-  <h2 class="BlogTitle"><a href="/blog/{{slug}}">{{title}}</a><h2>
+  <h2 class="BlogTitle"><a href="/blog/{{slug}}">{{title}}</a></h2>
   <h3 class="BlogDate">{{date}}</h3>
   {{{body}}}
   <div class="horizontalDivider"></div>
@@ -51,7 +51,7 @@
     <div id="content">
       <div class="singleColumn">
         {{> post}}
-        <h4 id="morePosts"><a href="/blog">« Back to all posts «</a><h4>
+        <h4 id="morePosts"><a href="/blog">« Back to all posts «</a></h4>
       </div>
     </div>
   </div>
@@ -72,9 +72,9 @@
 
     <div id="content">
       <div class="singleColumn">
-        <h2 class="text-center">We couldn't find that post :(<h2>
+        <h2 class="text-center">We couldn't find that post :(</h2>
         <div class="horizontalDivider"></div>
-        <h4 id="morePosts"><a href="/blog">« Back to all posts «</a><h4>
+        <h4 id="morePosts"><a href="/blog">« Back to all posts «</a></h4>
       </div>
     </div>
   </div>

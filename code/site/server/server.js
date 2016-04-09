@@ -1,4 +1,9 @@
-Posts = new Meteor.Collection('posts');
+import { Meteor } from 'meteor/meteor';
+import { Email } from 'meteor/email';
+import { HTTP } from 'meteor/http';
+import { Mongo } from 'meteor/mongo';
+
+Posts = new Mongo.Collection('posts');
 
 Meteor.publish('posts', function() {
   return Posts.find({});
@@ -13,7 +18,6 @@ Meteor.startup(function () {
   });
 
 });
-
 
 Meteor.methods({
   emailMessage: function(name, email, phone, message) {

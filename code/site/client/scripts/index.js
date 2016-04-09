@@ -1,3 +1,7 @@
+import { Meteor } from 'meteor/meteor';
+import { Session } from 'meteor/session'
+import { Template } from 'meteor/templating'
+
 var pages = [
   { name: 'Home', path: '/' },
   { name: 'About Us', path: '/about' },
@@ -7,21 +11,29 @@ var pages = [
   { name: 'Contact Us', path: '/contact' },
 ];
 
-Template.nav.pages = function () {
-  return pages;
-};
+Template.nav.helpers({
+  pages: function () {
+    return pages;
+  }
+});
 
-Template.footer.pages = function () {
-  return pages;
-};
+Template.footer.helpers({
+  pages: function() {
+    return pages;
+  }
+});
 
-Template.blog.posts = function() {
-  return Posts.find({}, {sort: {'timestamp': 'desc'}, limit: Session.get('postLimit')}).fetch();
-};
+Template.blog.helpers({
+  posts: function() {
+    return Posts.find({}, {sort: {'timestamp': 'desc'}, limit: Session.get('postLimit')}).fetch();
+  }
+});
 
-Template.blog.more = function() {
-  return Posts.find({}).count() > Session.get('postLimit');
-};
+Template.blog.helpers({
+  more: function() {
+    return Posts.find({}).count() > Session.get('postLimit');
+  }
+});
 
 Template.blog.events = {
   'click #morePosts': function(e) {
