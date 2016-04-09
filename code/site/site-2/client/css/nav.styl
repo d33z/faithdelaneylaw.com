@@ -1,0 +1,77 @@
+@import 'index.styl'
+
+#nav
+  navButtonBg = darkBg
+  navButtonHover = lighten(navButtonBg, 15%)
+  navButtonActive = darken(navButtonBg, 15%)
+
+  position absolute
+  z-index z-nav
+  width 100%
+
+
+  .navbar-inner
+    // Bootstrap Overrides
+    background-image none
+    border none
+    border-radius 0
+    min-height inherit
+    background-color transparent
+    padding 0
+    box-shadow none
+
+    font-size smallHeaderSize
+    line-height 1em
+
+    border-top 2px solid navButtonActive
+    box-shadow 0 -8px 10px rgba(black, 10%)
+
+  .btn-navbar
+    // Bootstrap Overrides
+    background-image none
+
+    @extend .button
+    display none
+    font-size smallHeaderSize
+    margin-top 0.25em
+    margin-right 0.25em
+
+  ul.nav
+    // Bootstrap Overrides
+    float none
+    width 100%
+    margin 0
+
+    background-color navButtonBg
+    background-color rgba(navButtonBg, 0.8)
+
+    text-align center
+
+  li.navButton
+    //Bootstrap Overrides
+    float none
+    display inline-block
+
+    a
+      @extend .lightFont
+
+      // Bootstrap Overrides
+      display block
+      border-radius 0
+      border none
+      text-shadow none
+
+      color lightTextColor
+
+      width 100%
+      height 100%
+      box-sizing border-box
+      padding 0.5em 1em
+      border-width 0
+
+      &:hover
+        background-color navButtonHover
+
+      &:active
+        background-color navButtonActive
+

@@ -1,0 +1,25 @@
+<template name="contact">
+  <div id="contact">
+    <div id="contentContainer">
+      {{> nav}}
+      <h1 id="title">Contact Us</h1>
+      <div id="content" class="row-fluid">
+        <div id="directions" class="span6">
+          {{> map}}
+          <a href="https://maps.google.com/maps?q=25+Kenoza+Avenue,+Haverhill,+MA&hl=en&sll=42.601691,-71.356016&sspn=0.163252,0.363579&oq=25+kenoza+a&hnear=25+Kenoza+Ave,+Haverhill,+Essex,+Massachusetts+01830&t=m&z=12" class="button">Directions from Google</a>
+
+          <div class="info">
+            25 Kenoza Ave<br>
+            Haverhill, MA 01830<br>
+            Phone: (978) 374-5898<br>
+            Fax: (978) 374-5885
+          </div>
+        </div>
+        <div id="contact" class="span6">
+          <p class="instruction">Write a message here or e-mail us at {{> email}}</p>
+          {{> contact_form}}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

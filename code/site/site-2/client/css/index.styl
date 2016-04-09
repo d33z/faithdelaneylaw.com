@@ -1,0 +1,155 @@
+@import 'util.styl'
+
+// Z-index order
+z-nav = 4
+z-banner = 3
+z-header = 2
+z-content = 1
+
+
+html, body
+  max-width 100%
+  height 100%
+  margin 0
+  padding 0
+
+body
+  @extend .defaultFont
+  background-color darkBg
+  font-size regularTextSize
+  line-height defaultLineHeight
+
+button
+  border none
+
+a
+  color lighten(contrastColor, 25%)
+  &:hover
+    color lighten(contrastColor, 10%)
+  &:active
+    color darken(contrastColor, 15%)
+
+html.no-multiplebgs
+  body
+    background-image url('/images/bg.jpg')
+
+li
+  line-height goldenRatio * 1em
+
+h1, h2, h3, h4, h5, h6
+  @extend .headerFont
+  font-weight normal
+  line-height 1.25em
+
+html.no-fontface
+  h1, h2, h3, h4, h5, h6
+    font-family 'Palatino Linotype', 'Palatino', serif
+    font-variant: small-caps
+
+h1
+  font-size largeHeaderSize
+h2
+  font-size mediumHeaderSize
+h3
+  font-size smallHeaderSize
+
+.container-fluid
+  width 100%
+  padding 0
+  margin 0
+
+  background-color rgb(243, 243, 243)
+  background-image linear-gradient(bottom, rgb(218, 218, 218), rgba(218, 218, 218, 0) 400px), url('/images/bg.jpg')
+  background-position bottom
+  background-repeat no-repeat, repeat
+
+#content
+  position relative
+  margin (pagePadding / goldenRatio) auto
+
+  width 100%
+  max-width 1400px
+
+  box-sizing border-box
+  padding-left pagePadding
+  padding-right pagePadding
+
+  z-index z-content
+
+  h1
+    color darkBg
+
+#banner
+  position relative
+  width 100%
+  min-height 240px
+  border-bottom 5px solid darkBg
+  background-size cover
+  background-position center center
+  background-repeat no-repeat
+  z-index z-banner
+
+#home #banner
+  height 415px
+
+#title
+  width 100%
+  font-size largeHeaderSize
+  text-align center
+  font-weight bold
+  color darkBg
+
+#bannerContent
+  padding 50px 0
+  margin-left pagePadding
+  margin-right pagePadding
+  text-align center
+
+  #subtitle
+    @extend .lightFont
+
+    margin-top 1em
+    font-size mediumHeaderSize
+
+.map
+  width 100%
+  max-width 280px
+  height 175px
+  #innerMap
+    width 100%
+    height 100%
+    box-shadow inset 0 2px 3px rgba(black, 50%)
+    background-image url('/images/map.jpg')
+    background-size cover
+    background-position center center
+
+#content #contact
+  text-align center
+
+  form input,
+  form textarea
+    // Bootstrap Overrides
+    font-size regularTextSize
+    line-height defaultLineHeight
+    height auto
+
+    display block
+    width 96%
+    max-width 500px
+    margin-bottom 1em
+
+  form 
+    &> *
+      margin-left auto
+      margin-right auto
+
+    textarea
+      min-height 100px
+
+    button
+      min-width 100px
+
+  h1
+    line-height 1em
+    margin-top 0
+    margin-bottom 0.5em
