@@ -1,0 +1,36 @@
+<template name="homepage">
+  <div id="home">
+    <div id="banner">
+      {{> nav}}
+      <div id="summaryContainer">
+        <div id="summary">
+          <h3>Elder Law</h3>
+          <h3>Estate Planning</h3>
+          <h3>Long Term Care &amp; Medicaid Planning</h3>
+          <h3>Guardianship &amp; Conservatorship</h3>
+          <h3>Special Needs Planning</h3>
+          <h3>Probate of Estates</h3>
+          <h4><a href="/practice" class="more">» Read More »</a></h4>
+        </div>
+      </div>
+    </div>
+
+    <div id="content">
+      <div class="row-fluid">
+        <div id="intro" class="span6">
+          <p>At the offices of Faith E. Delaney, Attorney at Law, we strive to provide prompt compassionate legal services at a reasonable cost in the areas of Elder Law, Estate Planning, Medicaid applications, Guardianship and Probate, Probate of Estates, and Disability Planning.
+          </p><p>Since establishing our office in 2004, we have developed an extensive network of professionals to assist our clients including financial planners, real estate brokers, and geriatric care managers. We are conveniently located in Haverhill, Massachusetts and serve clients in Northeastern Massachusetts and Southern New Hampshire.
+          </p>
+          <div class="membership row-fluid">
+            <div class="span6"><img src="/images/naela.png" alt="National Academy of Elder Law Attorneys Member"></div>
+            <div class="span6"><img src="/images/naepc.png" alt="Merrimack Valley Estate Planning Council"></div>
+          </div>
+        </div>
+        <div  id="contact" class="offset1 span5">
+          {{> contact_form}}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</template>

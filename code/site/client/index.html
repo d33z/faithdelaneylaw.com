@@ -1,0 +1,85 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faith Delaney Law • Legal Services for Life Planning</title>
+</head>
+
+<body>
+</body>
+
+<template name="layout">
+  <div class="container-fluid">
+    {{yield 'header'}}
+    {{yield}}
+    {{yield 'footer'}}
+  </div>
+</template>
+
+<template name="spacer">
+  <span class="spacer"></span>
+</template>
+
+<template name="header">
+  <div id="header">
+    <h1 id="name">Faith E. Delaney</h1>
+    <p>Attorney at Law ~ Legal Services for Life Planning</p>
+  </div>
+</template>
+
+<template name="nav">
+  <div id="nav" class="navbar">
+    <div class="navbar-inner">
+      <div class="nav-collapse collapse">
+        <ul id="buttonContainer" class="nav">
+          {{#each pages}}<li class="navButton"><a href="{{path}}">{{name}}</a></li>{{/each}}
+        </ul>
+      </div>
+      <button class="button btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+        Menu
+      </button>
+    </div>
+  </div>
+</template>
+
+<template name="footer">
+  <div id="footer">
+    <div class="row-fluid">
+      <div class="nav span4">
+        {{#each pages}}<a href="{{path}}">{{name}}</a>{{/each}}
+      </div>
+      <div class="copyright span4">
+        Copyright &copy; 2013 Faith Delaney. All rights reserved.
+      </div>
+      <div class="contact span4">
+        25 Kenoza Ave<br>
+        Haverhill, MA 01830<br>
+        {{> email}}<br>
+        Phone: (978) 374-5898<br>
+        Fax: (978) 374-5885<br>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="email">
+  <a class="email" href="mailto:contact@faithdelaneylaw.com">contact{{> spacer}}@{{> spacer}}faithdelaneylaw.com</a>
+</template>
+
+<template name="map">
+  <div class="map">
+    <a href="https://maps.google.com/maps?q=25+Kenoza+Avenue,+Haverhill,+MA&hl=en&ll=42.781543,-71.075706&spn=0.16278,0.363579&sll=42.601691,-71.356016&sspn=0.163252,0.363579&oq=25+kenoza+a&hnear=25+Kenoza+Ave,+Haverhill,+Essex,+Massachusetts+01830&t=m&z=12">
+      <div id="innerMap"></div>
+    </a>
+  </div>
+</template>
+
+<template name="contact_form">
+  <h1>Contact Us</h1>
+  <form id="contact-form" name="contact">
+    <input type="text" placeholder="Name">
+    <input type="email" placeholder="E-mail">
+    <input type="tel" placeholder="Phone">
+    <textarea placeholder="Message"></textarea>
+    <button type="submit" class="button">Send</button>
+  </form>
+  <div id="status"></div>
+</template>
